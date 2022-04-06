@@ -1,5 +1,7 @@
 # percentage
 
+This fork's documentation is still under construction ...
+
 ![]
 
 See your battery percentage in the Windows system tray
