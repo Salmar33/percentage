@@ -83,29 +83,22 @@ namespace percentage
             String bitmapText = percentage;
             Color textColor;
 
-
-            // DEBUG
-            bitmapText = "99";
-            textColor = Color.Orange;
-            // END DEBUG
-
-
-            // if(powerStatus.BatteryLifePercent >= 0.4)
-            // {
-            //     textColor = Color.Lime;
-            // }
-            // else if(powerStatus.BatteryLifePercent < 0.4 && powerStatus.BatteryLifePercent >= 0.3)
-            // {
-            //     textColor = Color.Yellow;
-            // }
-            // else if(powerStatus.BatteryLifePercent < 0.3 && powerStatus.BatteryLifePercent >= 0.2)
-            // {
-            //     textColor = Color.Orange;
-            // }
-            // else
-            // {
-            //     textColor = Color.Red;
-            // }
+            if(powerStatus.BatteryLifePercent >= 0.4)
+            {
+                textColor = Color.Lime;
+            }
+            else if(powerStatus.BatteryLifePercent < 0.4 && powerStatus.BatteryLifePercent >= 0.3)
+            {
+                textColor = Color.Yellow;
+            }
+            else if(powerStatus.BatteryLifePercent < 0.3 && powerStatus.BatteryLifePercent >= 0.2)
+            {
+                textColor = Color.Orange;
+            }
+            else
+            {
+                textColor = Color.Red;
+            }
 
             using (Bitmap bitmap = new Bitmap(GetTextBitmap(bitmapText, new Font(font, fontSize, FontStyle.Bold), textColor)))
             {
