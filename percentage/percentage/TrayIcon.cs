@@ -109,9 +109,15 @@ namespace percentage
                     using (Icon icon = Icon.FromHandle(intPtr))
                     {
                         notifyIcon.Icon = icon;
-                        var batteryMinutesRemaining = batteryTotSecRemaining / 60;
-                        var batteryHoursRemaining = batteryMinutesRemaining / 60;
-                        String toolTipText = "approx. runtime: " + batteryHoursRemaining + ":" + batteryMinutesRemaining;
+                        var batteryTotMinutesRemaining = batteryTotSecRemaining / 60;
+                        var batteryTotHoursRemaining = batteryTotMinutesRemaining / 60;
+                        var batteryRelMinutesRemaining = batteryTotMinutesRemaining % 60;
+                        String toolTipText = 
+                            ((batteryTotHoursRemaining < 10) ? "0" : "") +
+                            batteryTotHoursRemaining.ToString() +
+                            ":" +
+                            ((batteryRelMinutesRemaining < 10) ? "0" : "") +
+                            batteryRelMinutesRemaining.ToString();
                         notifyIcon.Text = toolTipText;
                     }
                 }
