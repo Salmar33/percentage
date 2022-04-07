@@ -78,7 +78,8 @@ namespace percentage
         {
             PowerStatus powerStatus = SystemInformation.PowerStatus;
             String percentage = (powerStatus.BatteryLifePercent * 100).ToString();
-            bool isCharging = SystemInformation.PowerStatus.PowerLineStatus == PowerLineStatus.Online;
+            //bool isCharging = SystemInformation.PowerStatus.PowerLineStatus == PowerLineStatus.Online;
+            var batteryTotSecRemaining = powerStatus.BatteryLifeRemaining;
             //String bitmapText = isCharging ? percentage + "*" : percentage;
             String bitmapText = percentage;
             Color textColor;
@@ -108,7 +109,9 @@ namespace percentage
                     using (Icon icon = Icon.FromHandle(intPtr))
                     {
                         notifyIcon.Icon = icon;
-                        String toolTipText = percentage + "%" + (isCharging ? " Charging" : "");
+                        var batteryMinutesRemaining = batteryTotSecRemaining / 60;
+                        var batteryHoursRemaining = batteryMinutesRemaining / 60;
+                        String toolTipText = "approx. runtime: " + batteryHoursRemaining + ":" + batteryMinutesRemaining;
                         notifyIcon.Text = toolTipText;
                     }
                 }
