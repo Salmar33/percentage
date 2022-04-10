@@ -7,8 +7,10 @@ See your battery percentage in the Windows system tray
 ## Installing
 
 1. [Download the latest release] (to the right in the "Releases" section "Download binaries")
-1. Put percentage.exe in your startup folder
-   1. To get to your startup folder, press Windows+R, type "shell:startup", then press enter
+1. Copy percentage.exe in your startup folder
+   1. To get to your startup folder, press Windows+R, type "shell:startup", then press return/enter
+   2. This way the percentage.exe will be started upon booting up
+   
 
 ## Compiling
 
