@@ -1,6 +1,7 @@
 # percentage
 
-![percentage](https://user-images.githubusercontent.com/64306911/162609826-d56bfdeb-4227-45fb-bedd-2ee385b0e00c.png)
+![percentage](https://user-images.githubusercontent.com/64306911/162609847-d3f73292-c7b6-4906-b972-6771e3057cda.png)
+
 
 See your battery percentage in the Windows system tray
 
